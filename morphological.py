@@ -13,14 +13,15 @@ while(1):
     
     mask = cv2.inRange(hsv, lower_red, upper_red)
     res = cv2.bitwise_and(frame,frame, mask= mask)
-    kernel = np.ones((15,15),np.float32)/225
-    
-    smoothed = cv2.filter2D(res,-1,kernel)
-    median = cv2.medianBlur(res,15)
 
-    cv2.imshow('Median Blur',median)
+    kernel = np.ones((5,5),np.uint8)
+    erosion = cv2.erode(mask,kernel,iterations = 1)
+    dilation = cv2.dilate(mask,kernel,iterations = 1)
+
     cv2.imshow('Original',frame)
-    cv2.imshow('Averaging',smoothed)
+    cv2.imshow('Mask',mask)
+    cv2.imshow('Erosion',erosion)
+    cv2.imshow('Dilation',dilation)
 
     k = cv2.waitKey(5) & 0xFF
     if k == 27:
