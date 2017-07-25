@@ -13,8 +13,8 @@ cap = cv2.VideoCapture(0)
 while 1:
     ret, img = cap.read()
     gray = cv2.cvtColor(src=img, code=cv2.COLOR_BGR2GRAY)
-    # scaleFactor – Parameter specifying how much the image size is reduced at each image scale.
-	# minNeighbors – Parameter specifying how many neighbors each candidate rectangle should have to retain it.
+    # scaleFactor Parameter specifying how much the image size is reduced at each image scale.
+	# minNeighbors Parameter specifying how many neighbors each candidate rectangle should have to retain it.
     faces = face_cascade.detectMultiScale(image=gray, scaleFactor=1.3, minNeighbors=5)
 
     for (x,y,w,h) in faces:
