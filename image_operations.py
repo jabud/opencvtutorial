@@ -1,13 +1,15 @@
 import cv2
 import numpy as np
 
-img = cv2.imread('images/jorge.jpg',cv2.IMREAD_COLOR)
+# read image
+img = cv2.imread('images/jorge.jpg', cv2.IMREAD_COLOR)
 
 # Now, we can reference specific pixels, like so:
 px = img[55,55]
-# Next, we could actually change a pixel:
 
+# Next, we could actually change a pixel:
 img[55,55] = [255,255,255]
+
 # Then re-reference:
 px = img[55,55]
 
