@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-img = cv2.imread('images/jorge.jpg', 1)
+img = cv2.imread(filename='images/jorge.jpg', iscolor=1)
 
 # DRAW
 # line         START      END       B,G,R   WIDTH
