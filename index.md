@@ -1,8 +1,8 @@
 ---
 layout: page
+title: "opencvtutorial"
 ---
 
-# opencvtutorial
 OpenCV Tutorial.
 
 Project with some basic object detection examples using python and openCV.
